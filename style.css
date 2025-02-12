@@ -1,0 +1,301 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+/*-----------------------Nav Bar!---------------------------------------------*/
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8f4f8;
+    padding: 10px 20px;
+    font-family: 'Bodoni Moda', serif;
+  }
+  
+  /* Logo Styling */
+  .logo img {
+    width: 50%;
+    max-width: 120px;
+    min-width: 10px;
+  }
+  
+  /* Navigation Links Styling */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px; /* Space between links */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #1d67a4; /* Neon green */
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #39ff14; /* White on hover */
+  }
+  
+  /* Contact Button Styling */
+  .contact-button a {
+    text-decoration: none;
+    color: #ededed; /* Dark text */
+    background-color: #154c79; /* Neon green */
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded edges */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .contact-button a:hover {
+    background-color: #39ff14;; /* White background on hover */
+    color: #1a1a1a; /* Dark text on hover */
+  }
+
+
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    .contact-button{
+        padding-bottom: 20px;
+    }
+}
+
+  /*-----------------------Body!---------------------------------------------*/
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Light gray background */
+    color: #333333; /* Dark gray text */
+    line-height: 1.6;
+  }
+  
+
+  /* Main Container */
+  .main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 79vh;
+    gap: 30px;
+  }
+  
+  /* Text Section Right*/
+  .text-section-right{
+    flex: 1;
+    padding-right: 30px; /* Space between text and photo */
+  }
+  .text-section-right h1 {
+    font-size: 3.2rem;
+    color: #06306c; /* Dark blue */
+    text-align: center;
+        font-family: "Red Hat Display", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;    
+  }
+  .text-section-right h3 {
+    font-size: 2 rem;
+    color: #0073e6; /* Dark blue */
+    text-align: center;
+    font-family:  "Bodoni", serif;
+    font-optical-sizing: auto;
+    line-height: 1.2;
+    font-weight: 300;
+    font-style: normal;
+  }
+  .text-section-right p {
+    font-size: 16px;
+    color: #555555; /* Medium gray */
+    margin-top: 15px;
+  }
+  
+  /* Text Section Left*/
+  .text-section-left{
+    flex: 1;
+    padding-right: 30px; /* Space between text and photo */
+    
+  }
+  .text-section-left h1 {
+    font-size: 2 rem;
+    color: #0066cd; /* Dark blue */
+    text-align: center;
+    font-family:  "Bodoni", serif;
+    font-optical-sizing: auto;
+    line-height: 1.2;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  .text-section-left h3 {
+    font-size: 2 rem;
+    color: #0073e6; /* Dark blue */
+    text-align: center;
+  }
+  .text-section-left p {
+    font-size: 16px;
+    color: #555555; /* Medium gray */
+  }
+
+  /* Photo Section */
+  .photo-section {
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .photo-section-round img {
+    width: 100%;
+    max-width: 400px; 
+    border-radius: 50%;
+    box-shadow:
+    0 0 50px 30px lightblue; /* outer blue glow */
+
+  }
+
+  .photo-section-square img {
+    width: 100%;
+    max-width: 400px; 
+    border-radius: 20%;
+    box-shadow:
+    0 0 50px 30px lightblue; /* outer blue glow */
+
+  }
+
+
+  /* Gallery Stuff*/
+
+  .gallery-shell{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5fde0;
+    padding-bottom: 2rem;
+    margin-bottom: 50px;
+    box-shadow:
+    0 0 50px 30px lightblue; /* outer blue glow */
+  }
+
+  .gallery-shell h1 {
+    font-size: 2 rem;
+    color: #0066cd; /* Dark blue */
+    text-align: center;
+    font-family:  "Bodoni", serif;
+    font-optical-sizing: auto;
+    line-height: 1.2;
+    font-weight: 300;
+    font-style: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+
+  .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 10px;
+  }
+
+  .col-1{
+    width: 30%;
+  }
+
+
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .text-section-right {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .text-section-left {
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+  
+    .photo-section  {
+        padding: 20px;
+        margin-top: 15px;
+      }
+
+    .photo-section img {
+      max-width: 300px; 
+    }
+  }
+
+/*home page glowy pic*/
+.round-pic{
+    border-radius: 50%;
+    max-width: 40vw;
+    box-shadow:
+      0 0 50px 30px lightblue; /* outer blue glow */
+}
+
+
+/*------------------------Footer!---------------------------------------------*/
+
+.footer{
+    background-color: #e8f4f8;
+    min-width: 100vw;
+    padding-top: .5rem;
+    text-align: center;
+}
+
+  /* Links Styling */
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #1d67a4; /* dark blue */
+    font-family: "Bodoni Moda";
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #39ff14; /* Neon green on hover */
+  }
+
+  .footer-links svg{
+    fill: #154c79 /* White on hover */
+  }
+
+  .footer-links svg:hover {
+    fill: #39ff14; /* Neon green on hover */
+  }
+
+  .copy-right{
+    font-family: "Bodoni";
+    font-weight: 300;
+  }
