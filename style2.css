@@ -1,208 +1,146 @@
-/* General Reset */
-* {
+/* General Styles */
+body {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #000; /* Black text */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  
-/*-----------------------Nav Bar!---------------------------------------------*/
-  /* Navbar Styling */
-  .navbar {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a; /* Almost black background */
+    color: #fff; /* White text */
+}
+
+/* Navbar Styles */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e8f4f8;
+    background-color: #add8e6; /* Light blue navbar */
     padding: 10px 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Logo Styling */
-  .logo img {
-    width: 50%;
-    max-width: 120px;
-    min-width: 10px;
-  }
-  
-  /* Navigation Links Styling */
-  .nav-links {
-    display: flex;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .navbar {
+    background-color: #00008b; /* Dark blue navbar */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
     list-style: none;
-    gap: 30px; /* Space between links */
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #1d67a4; /* Neon green */
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #39ff14; /* White on hover */
-  }
-  
-  /* Contact Button Styling */
-  .contact-button a {
-    text-decoration: none;
-    color: #ededed; /* Dark text */
-    background-color: #154c79; /* Neon green */
-    padding: 10px 20px;
-    border-radius: 25px; /* Rounded edges */
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .contact-button a:hover {
-    background-color: #39ff14;; /* White background on hover */
-    color: #1a1a1a; /* Dark text on hover */
-  }
-
-
-  /* Responsive Layout */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      text-align: center;
-      gap: 20px;
-    }
-    .contact-button{
-        padding-bottom: 20px;
-    }
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-  /*-----------------------Body!---------------------------------------------*/
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9; /* Light gray background */
-    color: #333333; /* Dark gray text */
-    line-height: 1.6;
-  }
-  
-  /* Main Container */
-  .main-container {
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #000; /* Black text for links */
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.dark-mode .navbar-links a {
+    color: #fff; /* White text for links in dark mode */
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 0 5px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: green;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* SVG Icons */
+.sun-icon,
+.moon-icon {
+    width: 20px;
+    height: 20px;
+    fill: #000; /* Black icons by default */
+    transition: fill 0.3s;
+}
+
+.dark-mode .sun,
+.dark-mode .moon{
+    fill: #fff; /* White icons in dark mode */
+}
+
+.sun-icon {
+    display: block;
+}
+
+.moon-icon {
+    display: none;
+}
+
+.dark-mode .sun-icon {
+    display: none;
+}
+
+.dark-mode .moon-icon {
+    display: block;
+}
+
+/* Content Styles */
+.content {
     padding: 20px;
-    border-radius: 10px;
-    min-height: 75vh;
-  }
-  
-  /* Text Section */
-  .text-section{
-    flex: 1;
-    padding-right: 40px; /* Space between text and photo */
-  }
-  
-  .text-section h1 {
-    font-size: 32px;
-    color: #0073e6; /* Dark blue */
-    margin-bottom: 20px;
-  }
-  
-  .text-section h3 {
-    font-size: 2 rem;
-    color: #0073e6; /* Dark blue */
-    text-align: center;
-  }
-
-  .text-section p {
-    font-size: 16px;
-    color: #555555; /* Medium gray */
-  }
-  
-  /* Photo Section */
-  .photo-section {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .photo-section img {
-    width: 100%;
-    max-width: 400px; 
-    border-radius: 50%;
-
-  }
-  
-  /* Responsive Layout */
-  @media (max-width: 768px) {
-    .main-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .text-section {
-      padding-right: 0;
-      margin-bottom: 20px;
-    }
-  
-    .photo-section  {
-        padding: 20px;
-        margin-top: 10px;
-      }
-
-    .photo-section img {
-      max-width: 300px; 
-    }
-  }
-
-/*Text Font Details*/
-
-#name {
-    font-size: 4rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #333333;
     text-align: center;
 }
-
-/*home page glowy pic*/
-.round-pic{
-    border-radius: 50%;
-    max-width: 40vw;
-    box-shadow:
-      0 0 50px 30px lightblue; /* outer blue glow */
-}
-
-
-/*------------------------Footer!---------------------------------------------*/
-
-.footer{
-    background-color: #e8f4f8;
-    min-width: 100vw;
-    padding-top: .5rem;
-    text-align: center;
-}
-
-  /* Links Styling */
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .footer-links a {
-    text-decoration: none;
-    color: #1d67a4; /* dark blue */
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links a:hover {
-    color: #39ff14; /* Neon green on hover */
-  }
-
-  .footer-links svg{
-    fill: #154c79 /* White on hover */
-  }
-
-  .footer-links svg:hover {
-    fill: #39ff14; /* Neon green on hover */
-  }
