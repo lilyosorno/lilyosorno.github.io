@@ -105,16 +105,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            
         }
         .cell.taken {
             background-color: rgb(191, 191, 191);
         }
+
+        .cell:hover{
+            box-shadow: -12px -8px 40px rgba(70, 70, 70, 0.449) inset;
+        }
+        
+        .piece {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: -60px;
+            transition: top 0.2s ease-in;
+        }        
 
         .h1 {
             font-family:"Aldrich", sans-serif;
             font-size: 4rem;
         }
         .message {
+            padding-top: 10px;
             font-size: 20px;
             font-weight: bold;
             margin: 10px 0;
@@ -184,7 +199,7 @@
     </center>
 
 <div class="vertical">
-    <p class="message" id="message">Player 1's turn</p>
+    <p class="message" id="message">Begin by clicking on any column!</p>
   
     <div class="board-container">
         <div class="board" id="board"></div>
@@ -241,6 +256,7 @@
             }
         }
 
+
         function updateBoard() {
             const cells = document.querySelectorAll(".cell");
             cells.forEach(cell => {
@@ -252,6 +268,7 @@
                 }
             });
         }
+
 
         function checkWin(row, col) {
             const directions = [
@@ -282,7 +299,8 @@
         function resetGame() {
             board = Array(rows).fill(null).map(() => Array(cols).fill(null));
             currentPlayer = 1;
-            document.getElementById("message").textContent = "Player 1's turn";
+            document.getElementById("message").textContent = "Turn: Player 1";
+            document.getElementById("message").style.color = colors[currentPlayer];
             document.getElementById("winnerMessage").style.display = "none"
             document.getElementById("winnerMessage").style.color = colors[currentPlayer];
             createBoard();
